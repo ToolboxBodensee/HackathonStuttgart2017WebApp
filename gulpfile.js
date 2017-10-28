@@ -113,11 +113,7 @@ gulp.task('less', function () {
 gulp.task('generateJs', function () {
     // @formatter:off
     return gulp.src([
-            'app/js/app.js',
-            'app/js/config/*.js',
-            'app/js/helper/*.js',
-            'app/js/controller/inheritance/*.js',
-            'app/js/controller/*.js'
+            'app/js/*.js',
         ])
         .pipe(ngAnnotate())
         //.pipe(minify({
