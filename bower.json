@@ -1,0 +1,21 @@
+{
+  "name":         "wriggle-web-app",
+  "description":  "",
+  "main":         "index.js",
+  "authors":      [
+    "Thomas Kekeisen <github@tk.ca.kekeisen.it>"
+  ],
+  "license":      "ISC",
+  "homepage":     "",
+  "ignore":       [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery":    "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
