@@ -116,11 +116,11 @@ gulp.task('generateJs', function () {
             'app/js/*.js',
         ])
         .pipe(ngAnnotate())
-        //.pipe(minify({
-        //    exclude:     ['tasks'],
-        //    ignoreFiles: ['.min.js', '-min.js'],
-        //    noSource:    true
-        //}))
+        .pipe(minify({
+            exclude:     ['tasks'],
+            ignoreFiles: ['.min.js', '-min.js'],
+            noSource:    true
+        }))
         .pipe(concat('wriggle.min.js'))
         .pipe(gulp.dest('tmp'))
     ;
