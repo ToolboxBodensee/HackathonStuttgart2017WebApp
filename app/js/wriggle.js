@@ -77,6 +77,10 @@ function initSocket (playerName) {
     socket.on('connectionSuccess', function (player) {
         $('#wriggler').css('background-color', player.color);
     });
+
+    socket.on('changeColor', function (color) {
+        $('#wriggler').css('background-color', color);
+    });
 }
 
 function registerOrientationHandler () {
