@@ -1,7 +1,14 @@
 const backendPath = (
-    'wriggle-backend.herokuapp.com'
-    //'10.200.19.196:3000'
+    //'wriggle-backend.herokuapp.com'
+    '10.200.19.196:3000'
 );
+
+const playerNames = [
+    'Thomas',
+    'David',
+    'Michael',
+    'Jonas'
+];
 
 Math.radians = function (degrees) {
     return degrees * Math.PI / 180;
@@ -11,6 +18,7 @@ Math.radians = function (degrees) {
 var lastBeta        = null;
 var lastGamma       = null;
 var lastRad         = null;
+var player          = null;
 var socket          = null;
 var socketConnected = false;
 // @formatter:on
@@ -23,6 +31,10 @@ $(document).ready(function () {
 
     $('#debug').click(function () {
         $(this).addClass('visible');
+
+        const randomPlayerName = playerNames[Math.floor(Math.random() * playerNames.length)];
+
+        playerNameInput.val(randomPlayerName);
     });
 
     $('#submit-button').click(function () {
@@ -60,6 +72,10 @@ function initSocket (playerName) {
         $('#loading').fadeOut(250);
         $('#form').fadeOut(250);
         $('#wriggler').addClass('visible');
+    });
+
+    socket.on('connectionSuccess', function (player) {
+        $('#wriggler').css('background-color', player.color);
     });
 }
 
