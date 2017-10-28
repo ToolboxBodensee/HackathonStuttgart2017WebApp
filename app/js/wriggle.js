@@ -19,6 +19,10 @@ $(document).ready(function () {
     initSocket();
     registerOrientationHandler();
     startTimer();
+
+    $('#debug').click(function () {
+        $(this).addClass('visible');
+    })
 });
 
 function handleOrientation (event) {
@@ -30,8 +34,8 @@ function handleOrientation (event) {
     lastRad     = Math.radians(lastGamma);
     // @formatter:on
 
-    $('#beta').text(lastBeta);
-    $('#gamma').text(lastGamma);
+    $('#beta').text(lastBeta.toFixed(4));
+    $('#gamma').text(lastGamma.toFixed(4));
 }
 
 function initSocket () {
