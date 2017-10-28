@@ -1,6 +1,6 @@
 const backendPath = (
-    //'wriggle-backend.herokuapp.com'
-    '10.200.19.196:3000'
+    'wriggle-backend.herokuapp.com'
+    // '10.200.19.196:3000'
 );
 
 const playerNames = [
